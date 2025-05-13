@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 195 83% 58%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -30,25 +33,9 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 195 83% 58%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -79,14 +66,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -96,6 +75,88 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+    font-size: 18px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-bold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full py-3 px-6 transition-all duration-300 font-semibold text-base;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-cta text-white hover:shadow-lg hover:scale-105 active:scale-100;
+  }
+
+  .btn-secondary {
+    @apply bg-diamate-soft-blue text-diamate-bright-blue hover:shadow-lg hover:scale-105 active:scale-100;
+  }
+
+  .btn-whatsapp {
+    @apply bg-diamate-whatsapp-green text-white hover:shadow-lg hover:scale-105 active:scale-100;
+  }
+
+  .feature-card {
+    @apply bg-gradient-card rounded-2xl p-6 shadow-card transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .blog-card {
+    @apply bg-white rounded-2xl overflow-hidden shadow-card transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .team-card {
+    @apply bg-white rounded-xl overflow-hidden shadow-card transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-center p-4;
+  }
+
+  .glassmorphic {
+    @apply bg-white/70 backdrop-blur-md rounded-2xl border border-white/50 shadow-card;
+  }
+
+  .section-title {
+    @apply text-center mb-12;
+  }
+
+  .section-title h2 {
+    @apply text-3xl md:text-4xl font-bold mb-4 relative inline-block;
+  }
+
+  .section-title h2::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-20 bg-diamate-blue rounded-full;
+  }
+
+  .section-title p {
+    @apply text-diamate-medium-gray max-w-2xl mx-auto;
+  }
+
+  .scrolled {
+    @apply bg-white shadow-nav !important;
+  }
+  
+  html {
+    scroll-behavior: smooth;
   }
 }
